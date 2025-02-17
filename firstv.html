@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Supply Chain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: #0d0d0d;
+            color: white;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #ff00ff, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 10px #ff00ff;
+        }
+    </style>
+</head>
+<body>
+    <header class="flex flex-wrap justify-between items-center p-4 bg-black bg-opacity-60 fixed w-full top-0 shadow-lg">
+        <h1 class="text-2xl font-bold gradient-text">CryptoSupply</h1>
+        <nav class="w-full md:w-auto mt-2 md:mt-0">
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-center">
+                <li><a href="#features" class="hover:text-purple-400">Функции</a></li>
+                <li><a href="#how-it-works" class="hover:text-purple-400">Как это работает</a></li>
+                <li><a href="#download" class="hover:text-purple-400">Скачать</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="h-screen flex flex-col justify-center items-center text-center p-6">
+        <h2 class="text-4xl md:text-5xl font-extrabold gradient-text">Прозрачность с помощью блокчейна</h2>
+        <p class="text-lg mt-4 max-w-xl">Контролируйте и проверяйте цепочку поставок с нашей передовой блокчейн-технологией</p>
+        <a href="#download" class="mt-6 px-6 py-3 bg-purple-600 text-white rounded-lg glow-button">Начать</a>
+    </section>
+    
+    <section id="how-it-works" class="py-20 bg-gray-900 text-center p-6">
+        <h2 class="text-3xl md:text-4xl font-bold gradient-text">Как это работает</h2>
+        <div class="flex flex-wrap justify-center gap-6 mt-10">
+            <div class="w-full sm:w-1/2 md:w-1/4 p-4 bg-gray-800 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold">Шаг 1</h3>
+                <p>Производители загружают данные о товаре в блокчейн, сканируя QR код</p>
+            </div>
+            <div class="w-full sm:w-1/2 md:w-1/4 p-4 bg-gray-800 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold">Шаг 2</h3>
+                <p>Перевозчики обновляют статус транзакции (товара)</p>
+            </div>
+            <div class="w-full sm:w-1/2 md:w-1/4 p-4 bg-gray-800 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold">Шаг 3</h3>
+                <p>Покупатели проверяют подлинность через QR-код</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="download" class="py-20 text-center p-6">
+        <h2 class="text-3xl md:text-4xl font-bold gradient-text">Скачать приложение</h2>
+        <p class="text-lg mt-4">Начните использовать будущее прозрачных поставок</p>
+        <img src="qr-code-2.png" class="mx-auto mt-6 w-48 sm:w-32 h-48 sm:h-32" alt="QR-код">
+    </section>
+    
+    <section id="contact" class="py-20 bg-gray-900 text-center p-6">
+        <h2 class="text-3xl md:text-4xl font-bold gradient-text">Связаться с нами</h2>
+        <p class="text-lg mt-4">Если вас заинтересовал проект, оставьте заявку, и мы вас уведовим о его старте</p>
+        <form class="mt-6 max-w-lg mx-auto" onsubmit="sendEmail(); return false;">
+            <input type="email" id="email" placeholder="Ваш Email" class="w-full p-3 mb-4 bg-gray-700 rounded-lg text-white" required>
+            <textarea id="message" placeholder="Ваше сообщение" class="w-full p-3 mb-4 bg-gray-700 rounded-lg text-white" required></textarea>
+            <button type="submit" class="px-6 py-3 bg-purple-600 text-white rounded-lg glow-button">Мне интересно</button>
+        </form>
+    </section>
+    
+    <footer class="py-6 bg-black text-center">
+        <p>&copy; 2025 CryptoSupply. Все права защищены.</p>
+    </footer>
+    
+    <script>
+        function sendEmail() {
+            let email = document.getElementById('email').value;
+            let message = document.getElementById('message').value;
+            let mailtoLink = `mailto:futitisme@gmail.com?subject=Интерес к CryptoSupply&body=Email: ${email}%0A%0AСообщение: ${message}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>
